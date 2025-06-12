@@ -1,0 +1,110 @@
+.search_result {
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+    .result_top {
+        width: 100%;
+        position: relative;
+        border-radius: 2rem 2rem 0 0;
+        border: 1px solid var(--color-border);
+        border-bottom: none;
+        background-color: var(--color-white);
+        padding: 2.5rem 2rem 1.7rem;
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            .tit {
+                font-size: 2rem;
+                font-family: var(--font-p600);
+                color: #0F1217;
+            }
+            .count {
+                font-size: 1.2rem;
+                color: var(--color-gray-1);
+                span {
+                    color: var(--color-point);
+                    font-family: var(--font-p600);
+                }
+            }
+        }
+        .download {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+        }
+    }
+    .result_list {
+        width: 100%;
+        position: relative;
+        padding-bottom: 0;
+        .white_wrap {
+            border-radius: 0 0 2rem 2rem;
+            margin-top: 0;
+            padding-bottom: 14.8rem;
+            .pagination {
+                position: absolute;
+                bottom:9rem;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: 0;
+            }
+            .common_table {
+                padding-bottom: 0;
+                .tbody {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+    > .border_btn.download {
+        display: none;
+    }
+    .bottom_btn {
+        position: absolute;
+        bottom: 8.5rem;
+        right: 2rem;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .common_table {
+        border-radius: 0;
+        padding-bottom: 9.2rem;
+        .show, .secret {
+            p {
+                width: 5.5rem;
+                height: 2.6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.6rem;
+                border: 1px solid var(--color-border);
+                font-size: 1.3rem;
+                font-family: var(--font-p500);
+                text-align: center;
+                background: #DFF4ED;
+                color: #0F9867;
+                margin: 0 auto;
+            }
+        }
+        .tbody {
+            > li {
+                &.hidden, &.lock {
+                    .show, .secret {
+                        p {
+                            background: #FFE4D0;
+                            color: #CD5700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.no_result {
+        .bottom_btn {
+            bottom: -7rem;
+        }
+    }
+}

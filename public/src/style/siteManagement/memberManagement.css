@@ -1,0 +1,30 @@
+@import "../base/common.css";
+
+.common_table {
+    .thead {
+        div {
+            width: 20%;
+        }
+    }
+    .tbody {
+        > li {
+            > div {
+                width: 20%;
+                &:first-child, &:nth-child(2) {
+                    text-align: left;
+                }
+            }
+        }
+        .chk_input {
+            justify-content: center;
+            span {
+                width: 2.4rem;
+                height: 2.4rem;
+                padding: 0;
+                &::before {
+                    top: 0;
+                }
+            }
+        }
+    }
+}

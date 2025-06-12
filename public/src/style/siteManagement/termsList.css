@@ -1,0 +1,32 @@
+@import "../base/common.css";
+
+.search_result {
+    .common_table {
+        .num {
+            width: 5%;
+        }
+        .title {
+            flex: 1;
+            p {
+                span {
+                    font-size: 1.4rem;
+                    color: var(--color-gray-3);
+                }
+            }
+        }
+        .show {
+            width: 10%;
+            order: 5;
+        }
+        .writer {
+            width: 10%;
+        }
+        .management {
+            width: 7%;
+            order: 6;
+        }
+        .time {
+            width: 15%;
+        }
+    }
+}

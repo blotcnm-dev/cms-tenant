@@ -1,0 +1,45 @@
+@import "../common/header.css";
+@import "../common/footer.css";
+@import "../common/section_title.css";
+@import "../common/banner.css";
+
+.container_list{
+    padding-block: 8rem;
+}
+h2{
+    margin-bottom:2rem;
+    font-size:3rem;
+}
+.list_type_container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    select{
+        flex-shrink: 0;
+        width:15rem;
+        height:4rem;
+        border:1px solid #e8e8e8;
+        border-radius: 0.5rem;
+    }
+}
+.terms_content {
+    width: 100%;
+    position: relative;
+    margin-top: 3.2rem;
+    padding: 2rem 0;
+    border-top: 0.5rem solid #1d1d1d;
+    border-bottom: 1px solid #eee;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: #000;
+    .title {
+        font-family: var(--font-700);
+        font-size: 1.8rem;
+        margin-bottom: 1.6rem;
+    }
+    .txt-1 {
+        & + .title {
+            margin-top: 3.2rem;
+        }
+    }
+}

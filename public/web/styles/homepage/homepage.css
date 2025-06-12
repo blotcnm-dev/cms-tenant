@@ -1,0 +1,45 @@
+@import "../common/header.css";
+@import "../common/footer.css";
+@import "../common/banner.css";
+
+.container_homepage{
+    padding-block: 8rem;
+    h2{
+        margin-bottom:2rem;
+        font-size:2rem;
+        text-align: center;
+    }
+    ul{
+        border-top:2px solid #1d1d1d;
+        li{
+            display: flex;
+            align-self: center;
+            justify-content: flex-start;
+            border-bottom: 1px solid #e8e8e8;
+            span{
+                display: block;
+                padding-block: 1rem;
+                font-size:1.8rem;
+            }
+            .page_name{
+                flex-shrink: 0;
+                width:12rem;
+                border-right:1px solid #e8e8e8;
+            }
+            .page_url{
+                width:100%;
+                padding-inline:1rem;
+                border-right:1px solid #e8e8e8;
+            }
+            a{
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding:1rem;
+                font-size:1.8rem;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "../base/common.css";
+
+.search_result {
+    .common_table {
+        .check, .num {
+            width: 5%;
+        }
+        .title {
+            flex: 1;
+        }
+        .time {
+            width: 20%;
+        }
+        .show, .date, .writer {
+            width: 10%;
+        }
+        .thead {
+            padding: 0;
+            .num {
+                color: transparent;
+            }
+        }
+        .tbody {
+            li {
+                padding: 0;
+            }
+            .title {
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+            > li {
+                > div {
+                    padding-inline: 1rem;
+                }
+            }
+        }
+    }
+}

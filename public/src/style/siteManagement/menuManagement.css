@@ -1,0 +1,199 @@
+@import "../base/common.css";
+
+#wrap {
+    &.white {
+        .container {
+            padding: 0 2rem 3rem;
+        }
+    }
+}
+.menu_management {
+    margin-inline: -2rem;
+    .common_table {
+        border: none;
+        .thead {
+            padding-inline: 1rem;
+        }
+        .menu {
+            width: 100%;
+            position: relative;
+        }
+        .menu_name {
+            width: 32%;
+        }
+        .en {
+            width: 16.5%;
+        }
+        .path, .info {
+            width: 21.3%;
+        }
+        .use {
+            width: 8.9%;
+        }
+        #menu_container {
+            width: 100%;
+            padding: 1rem;
+        }
+        .menu_item {
+            width: 100%;
+            background-color: var(--color-white);
+            .inner {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+                border-radius: 1rem;
+                > div {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem 0.5rem;
+                }
+            }
+            .accordion {
+                width: 59.1%;
+                > div {
+                    flex: 1;
+                    & + div {
+                        padding-left: 1rem;
+                    }
+                }
+                .num {
+                    flex: none;
+                    width: 10%;
+                    font-size: 1.5rem;
+                    color: var(--color-gray-1);
+                    text-align: center;
+                }
+                .en {
+                    flex: none;
+                    width: 28.2%;
+                }
+            }
+            &[data-depth="1"] {
+                & + [data-depth="1"] {
+                    margin-top: 1rem;
+                }
+                > .inner {
+                    border: 1px solid #E8F1FF;
+                    background: #F2F7FF;
+                    border-radius: 1rem;
+                    .menu_name {
+                        padding-left: 1rem;
+                        .common_input {
+                            padding-inline: 4.4rem 13rem;
+                        }
+                        &::after {
+                            content: "";
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 2rem;
+                            background: url("/src/assets/icons/draggable.png") 50% 50% / contain no-repeat;
+                        }
+                    }
+                }
+            }
+            &[data-depth="2"], &[data-depth="3"] {
+                > .inner {
+                    .menu_name {
+                        padding-left: 5.4rem;
+                        .common_input {
+                            padding-inline: 1.5rem 13rem;
+                        }
+                        &::after {
+                            content: "";
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 2rem;
+                            background: url("/src/assets/icons/depth_2.png") 50% 50% / contain no-repeat;
+                        }
+                    }
+                }
+            }
+            &[data-depth="3"] {
+                > .inner {
+                    .menu_name {
+                        .common_input {
+                            padding-inline: 1.5rem 4rem;
+                        }
+                        .plus_btn {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .plus_btn {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            border-radius: 0.5rem;
+            background-color: #D5E6FB;
+            border: 1px solid rgba(53, 86, 252, 0.05);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5rem;
+            font-size: 1.2rem;
+            font-family: var(--font-p500);
+            color: var(--color-point);
+            padding: 0.6rem 1rem 0.6rem 2.7rem;
+            &::before {
+                content: "";
+                width: 1.6rem;
+                height: 1.6rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0.6rem;
+                background: url("/src/assets/icons/plus_icon.png") 50% 50% / contain no-repeat;
+            }
+        }
+        .edit_btn {
+            display: none;
+        }
+        .del_btn {
+            font-size: 0;
+            color: transparent;
+            width: 2.6rem;
+            height: 2.6rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1.5rem;
+            background: url("/src/assets/icons/del_btn_2.png") 50% 50% / contain no-repeat;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .menu_management {
+        .common_table {
+            .thead {
+                div {
+                    padding-inline: 0.5rem;
+                }
+            }
+            .menu_name {
+                width: 35%;
+            }
+            .accordion {
+                width: 57.7%;
+            }
+            .use {
+                width: 7.3%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 820px) {
+    
+}

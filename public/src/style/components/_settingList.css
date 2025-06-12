@@ -1,0 +1,109 @@
+.setting_list {
+    > ul {
+        display: grid;
+        /* grid-template-columns: repeat(2, 1fr); */
+        gap: 1.5rem;
+        > li {
+            width: 100%;
+            position: relative;
+            background-color: #F3F6FA;
+            border-radius: 1.7rem;
+            border: 1px solid var(--color-border);
+        }
+    }
+    .del_btn {
+        font-size: 0;
+        color: transparent;
+        width: 2.2rem;
+        height: 2.2rem;
+        position: absolute;
+        bottom: 2.6rem;
+        right: 8.7rem;
+        background: url("/src/assets/icons/del_btn_2_white.png") 50% 50% / contain no-repeat;
+        z-index: 2;
+    }
+    .list_num {
+        display: none;
+    }
+    .inner_cnt {
+        flex: 1;
+        position: relative;
+        border-radius: 1.7rem;
+        padding: 1.5rem 1.5rem 3rem;
+        .common_switch {
+            position: absolute;
+            bottom: 2.6rem;
+            right: 2.6rem;
+        }
+        &::before {
+            content: "";
+            width: 10.6rem;
+            height: 4.4rem;
+            border-radius: 0.7rem;
+            background-color: #F8F9FA;
+            border: 1px solid var(--color-border-input);
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+        &::after {
+            content: "";
+            width: 1px;
+            height: 2.2rem;
+            border-right: 1px dashed var(--color-border);
+            position: absolute;
+            bottom: 2.6rem;
+            right: 7.6rem;
+        }
+    }
+    .cnt_input {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .half {
+            width: calc(50% - 0.5rem);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            .common_input {
+                padding-inline: 1.5rem 5rem;
+            }
+            .edit_btn {
+                width: 1.8rem;
+                height: 1.8rem;
+                background: url("/src/assets/icons/edit.png") 50% 50% / contain no-repeat;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1.3rem;
+                font-size: 0;
+                color: transparent;
+            }
+            .fill_btn {
+                &.black {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 1rem;
+                }
+            }
+            .cnt_tit {
+                min-width: 7rem;
+                font-size: 1.5rem;
+                font-family: var(--font-p700);
+                color: var(--color-gray-1);
+            }
+            &.input_gap {
+                width: auto;
+                gap: 1.4rem;
+                margin: 0.8rem 5rem 0 0;
+                .radio_input {
+                    height: 2.4rem;
+                }
+            }
+        }
+    }
+}

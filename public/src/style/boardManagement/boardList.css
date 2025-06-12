@@ -1,0 +1,49 @@
+@import "../base/common.css";
+
+.common_table {
+    .num {
+        width: 5%;
+    }
+    .title {
+        flex: 1;
+    }
+    .type {
+        width: 8%;
+    }
+    .show {
+        width: 12%;
+        order: 6;
+    }
+    .date {
+        width: 15%;
+    }
+    .writer {
+        width: 8%;
+    }
+    .management {
+        width: 10%;
+        order: 7;
+    }
+    .tbody {
+        .title {
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+        .management {
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                button {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

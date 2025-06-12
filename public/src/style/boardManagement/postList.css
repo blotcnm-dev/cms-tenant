@@ -1,0 +1,36 @@
+@import "../base/common.css";
+
+.common_table {
+    .thead {
+        padding-inline: 0;
+        .num {
+            color: transparent;
+        }
+    }
+    .tbody {
+        li {
+            padding-inline: 0;
+        }
+    }
+    .check, .num {
+        width: 5%;
+    }
+    .type {
+        width: 13%;
+    }
+    .title {
+        flex: 1;
+    }
+    .secret {
+        width: 8%;
+        order: 6;
+    }
+    .spam {
+        width: 8%;
+        order: 7;
+    }
+    .date {
+        width: 15%;
+        order: 5;
+    }
+}

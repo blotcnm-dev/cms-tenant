@@ -1,0 +1,58 @@
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 200;
+}
+
+.layer_wrap {
+    width: calc(100% - 4rem);
+    height: auto;
+    max-width: 70rem;
+    background-color: var(--color-white);
+    border-radius: 2rem;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 201;
+    .layer_top {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.4rem 3rem 1rem;
+    }
+    .layer_title {
+        font-size: 2rem;
+        font-family: var(--font-p600);
+        color: var(--color-black);
+    }
+    .close_btn {
+        font-size: 0;
+        color: transparent;
+        width: 3.6rem;
+        height: 3.6rem;
+        background: url("/src/assets/icons/layer_close.png") 50% 50% / contain no-repeat;
+    }
+    .layer_content {
+        padding: 0 3rem 10rem;
+        max-height: calc(100vh - 20rem);
+        overflow-y: auto;
+    }
+    .layer_btn_box {
+        width: fit-content;
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}

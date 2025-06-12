@@ -1,0 +1,34 @@
+@import "../base/common.css";
+
+.common_table {
+    .thead {
+        padding: 0;
+        .num {
+            color: transparent;
+        }
+    }
+    .tbody {
+        li {
+            padding: 0;
+        }
+    }
+    .check, .num {
+        width: 5%;
+    }
+    .state {
+        width: 10%;
+    }
+    .type, .date {
+        width: 20%;
+    }
+    .title {
+        flex: 1;
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp:1;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

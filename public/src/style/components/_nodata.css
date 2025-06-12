@@ -1,0 +1,28 @@
+.nodata {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    > div {
+        p {
+            font-size: 1.2rem;
+            color: var(--color-gray-3);
+            font-family: var(--font-p500);
+            position: relative;
+            padding-block: 7.6rem 3.5rem;
+            text-align: center;
+            &::before {
+                content: "";
+                width: 7rem;
+                height: 7rem;
+                background: url("/src/assets/icons/nodata.png") 50% 50% / contain no-repeat;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,356 @@
+@import "../base/common.css";
+
+.post_top {
+    padding: 2rem;
+    ul {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: wrap;
+        li {
+            width: calc(50% - 0.5rem);
+            position: relative;
+            .inner_box {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: stretch;
+                gap: 1rem;
+                .title {
+                    width: 15rem;
+                    min-height: 4.4rem;
+                    flex-shrink: 0;
+                    border-radius: 0.7rem;
+                    background: rgba(148, 163, 184, 0.10);
+                    font-size: 1.4rem;
+                    font-family: var(--font-p600);
+                    color: var(--color-black);
+                    display: flex;
+                    align-items: center;
+                    padding-inline: 1.5rem;
+                }
+                .info {
+                    width: 100%;
+                    height: 4.4rem;
+                    position: relative;
+                    border-block: 1px solid var(--color-border-input);
+                    display: flex;
+                    align-items: center;
+                    padding-inline: 2rem;
+                    font-size: 1.3rem;
+                    font-family: var(--font-p500);
+                    color: var(--color-gray-2);
+                    line-height: 1.3;
+                    &.depth {
+                        gap: 2rem;
+                        p {
+                            position: relative;
+                            &::after {
+                                content: ">";
+                                position: absolute;
+                                top: 0;
+                                right: -1.5rem;
+                            }
+                            &:last-child {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    &.block {
+                        display: block;
+                    }
+                }
+            }
+            .input_gap {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: fit-content;
+                padding-inline: 1rem;
+            }
+            &.full {
+                width: 100%;
+            }
+            &.two {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            &.auto_height {
+                .info {
+                    height: auto;
+                    padding-block: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.post_content {
+    padding: 3rem 5rem;
+    font-size: 1.4rem;
+    font-family: var(--font-p500);
+    color: var(--color-gray-2);
+    line-height: 1.4;
+    img {
+        width: auto;
+        height: auto;
+        border-radius: 2.3rem;
+        overflow: hidden;
+        object-fit: contain;
+        max-width: 100%;
+        margin-top: 3rem;
+    }
+}
+
+.post_comment {
+    padding: 2rem 5rem 3rem;
+    .comment_count {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: auto;
+        > div {
+            width: fit-content;
+            height: 3.8rem;
+            position: relative;
+            border-radius: 2rem;
+            background: #F0F2F5;
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem 1rem 5.2rem;
+            > button, span {
+                font-size: 1.6rem;
+                font-family: var(--font-p500);
+                color: var(--color-gray-1);
+            }
+            &::before {
+                content: "";
+                width: 2.4rem;
+                height: 2.4rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 2rem;
+            }
+            &.heart {
+                &::before {
+                    background: url("/src/assets/icons/count_heart.png") 50% 50% / contain no-repeat;
+                }
+            }
+            &.num {
+                &::before {
+                    background: url("/src/assets/icons/count_comment.png") 50% 50% / contain no-repeat;
+                }
+            }
+        }
+    }
+    .comment_list {
+        width: 100%;
+        position: relative;
+        margin-top: 4rem;
+        .top {
+            width: 100%;
+            position: relative;
+            margin-bottom: 2rem;
+            p {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 2.8rem;
+                font-family: var(--font-p600);
+                color: var(--color-gray-1);
+                span {
+                    font-family: var(--font-p500);
+                    color: var(--color-point);
+                }
+            }
+        }
+        > ul {
+            width: 100%;
+            position: relative;
+            padding-block: 4rem;
+            margin-block: 2rem;
+            border-block: 1px solid var(--color-border);
+            > li {
+                .inner_box {
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 2.8rem;
+                    .profile {
+                        width: 7rem;
+                        height: 7rem;
+                        border-radius: 50%;
+                        flex-shrink: 0;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .comment {
+                        width: 100%;
+                        position: relative;
+                        .info {
+                            .name {
+                                font-size: 2rem;
+                                font-family: var(--font-p600);
+                                color: var(--color-gray-1);
+                            }
+                            .date {
+                                display: block;
+                                font-size: 1.3rem;
+                                font-family: var(--font-p500);
+                                color: var(--color-gray-3);
+                                margin-top: 0.3rem;
+                            }
+                        }
+                        .txt {
+                            width: 100%;
+                            position: relative;
+                            font-size: 1.4rem;
+                            font-family: var(--font-p500);
+                            line-height: 1.4;
+                            color: var(--color-gray-2);
+                            margin-top: 1.5rem;
+                            word-break: break-word;
+                        }
+                        .bottom_box {
+                            display: flex;
+                            align-items: center;
+                            gap: 3.2rem;
+                            margin-top: 2rem;
+                            button {
+                                font-size: 1.4rem;
+                                font-family: var(--font-p500);
+                                color: var(--color-gray-1);
+                                &.heart {
+                                    position: relative;
+                                    padding-left: 3.2rem;
+                                    &::before {
+                                        content: "";
+                                        width: 2.4rem;
+                                        height: 2.4rem;
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        left: 0;
+                                        background: url("/src/assets/icons/count_heart.png") 50% 50% / contain no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .posi_right {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        li {
+                            button {
+                                width: 4.3rem;
+                                height: 2.4rem;
+                                border-radius: 0.4rem;
+                                border: 1px solid var(--color-border);
+                                background-color: var(--color-white);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 1.2rem;
+                                font-family: var(--font-p600);
+                                color: var(--color-gray-2);
+                            }
+                        }
+                    }
+                }
+                .reply_box {
+                    width: 100%;
+                    position: relative;
+                    padding: 4rem 0 0 10rem;
+                    .inner_box {
+                        .profile {
+                            width: 6rem;
+                            height: 6rem;
+                        }
+                        .comment {
+                            .info {
+                                .name {
+                                    font-size: 1.6rem;
+                                }
+                            }
+                            .bottom_box {
+                                .reply_btn {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    &.write {
+                        padding-bottom: 5rem;
+                        display: none;
+                        .inner_box {
+                            align-items: center;
+                            padding-bottom: 1.4rem;
+                            border-bottom: 1px solid #676767;
+                            gap: 1rem;
+                            .comment {
+                                width: 100%;
+                                .info {
+                                    display: none;
+                                }
+                                textarea {
+                                    width: 100%;
+                                    resize: none;
+                                    position: relative;
+                                    border: none;
+                                    font-size: 1.4rem;
+                                    font-family: var(--font-p500);
+                                    color: var(--color-black);
+                                    line-height: 1.4;
+                                    padding: 1rem;
+                                    &::placeholder {
+                                        color: var(--color-gray-3);
+                                    }
+                                }
+                                .btn_flex {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.5rem;
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: -9rem;
+                                    button {
+                                        width: 7.2rem;
+                                        height: 3.8rem;
+                                        border-radius: 0.7rem;
+                                        border: 1px solid var(--color-border-input);
+                                        background-color: var(--color-white);
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 1.2rem;
+                                        font-family: var(--font-p600);
+                                        color: #183E67;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & + li {
+                    margin-top: 5rem;
+                }
+            }
+        }
+    }
+}

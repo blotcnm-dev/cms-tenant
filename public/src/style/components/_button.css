@@ -1,0 +1,118 @@
+.fill_btn {
+    width: fit-content;
+    position: relative;
+    padding: 0.6rem 1rem;
+    background-color: #8B95A3;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    font-size: 1.2rem;
+    font-family: var(--font-p500);
+    line-height: 1;
+    color: var(--color-white);
+    &.plus {
+        background-color: var(--color-point);
+        border-radius: 0.7rem;
+        padding: 1rem 1.2rem 1rem 3.2rem;
+        font-size: 1.3rem;
+        font-family: var(--font-p600);
+        input {
+            display: none;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        &::before {
+            content: "";
+            width: 1.6rem;
+            height: 1.6rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1rem;
+            background: url("/src/assets/icons/plus_white.png") 50% 50% / contain no-repeat;
+        }
+        &.add_file {
+            flex-shrink: 0;
+            border: 1px solid var(--color-point);
+            background-color: var(--color-white);
+            color: var(--color-point);
+            padding: 1.4rem 1.4rem 1.4rem 3.5rem;
+            &::before {
+                background: url("/src/assets/icons/plus_blue.png") 50% 50% / contain no-repeat;
+                left: 1.4rem;
+            }
+        }
+    }
+    &.download {
+        border: 1px solid var(--color-point);
+        background-color: var(--color-white);
+        padding: 1rem 1.6rem 1rem 3.7rem;
+        font-size: 1.3rem;
+        font-family: var(--font-p600);
+        color: var(--color-point);
+        &::before {
+            content: "";
+            width: 1.8rem;
+            height: 1.8rem;
+            background: url("/src/assets/icons/download.png") 50% 50% / contain no-repeat;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1.3rem;
+        }
+    }
+}
+
+.border_btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    position: relative;
+    padding: 1.4rem 2.1rem 1.4rem 4.4rem;
+    border-radius: 0.7rem;
+    border: 1px solid #D9E0E6;
+    background: var(--color-white);
+    font-size: 1.3rem;
+    font-family: var(--font-p600);
+    color: #183E67;
+    &::before {
+        content: "";
+        width: 1.8rem;
+        height: 1.8rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+    }
+    &.save {
+        &::before {
+            background: url("/src/assets/icons/save.png") 50% 50% / contain no-repeat;
+        }
+    }
+    &.cancel {
+        &::before {
+            background: url("/src/assets/icons/cancel.png") 50% 50% / contain no-repeat;
+        }
+    }
+    &.modify {
+        &::before {
+            background: url("/src/assets/icons/modify.png") 50% 50% / contain no-repeat;
+        }
+    }
+    &.register {
+        &::before {
+            background: url("/src/assets/icons/register.png") 50% 50% / contain no-repeat;
+        }
+    }
+}
+
+.common_bottom_btn {
+    width: 100%;
+    position: relative;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}

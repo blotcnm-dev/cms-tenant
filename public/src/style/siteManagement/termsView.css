@@ -1,0 +1,32 @@
+@import "../base/common.css";
+
+.nodata {
+    border-top: 1px solid var(--color-border);
+    border-radius: 2rem;
+    padding-top: 3.5rem;
+}
+
+.common_table {
+    .num {
+        width: 10%;
+    }
+    .edit {
+        width: 40%;
+    }
+    .writer {
+        width: 30%;
+    }
+    .management {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.pagination {
+    margin-top: 3rem;
+}

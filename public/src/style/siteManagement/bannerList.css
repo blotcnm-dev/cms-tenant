@@ -1,0 +1,40 @@
+@import "../base/common.css";
+
+.search_result {
+    .common_table {
+        .num {
+            width: 5%;
+        }
+        .title {
+            flex: 1;
+        }
+        .time {
+            width: 20%;
+        }
+        .date {
+            width: 12%;
+        }
+        .writer {
+            width: 10%;
+        }
+        .show {
+            width: 10%;
+            order: 6;
+        }
+        .management {
+            width: 7%;
+            order: 7;
+        }
+        .tbody {
+            .title {
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}

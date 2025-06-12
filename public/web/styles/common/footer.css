@@ -1,0 +1,40 @@
+footer{
+    width:100%;
+    background-color:#1d1d1d;
+    .inner {
+        width: 100%;
+        padding: 5rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .left_box {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            ul {
+                max-width: 60rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+                li {
+                    p, a {
+                        color: rgba(255, 255, 255, 0.85);
+                        font-size: 1.4rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4rem;
+                        span {
+                            font-family: var(--font-700);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.2rem;
+        }
+    }
+}

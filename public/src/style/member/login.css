@@ -1,0 +1,176 @@
+@import "../base/common.css";
+
+main {
+    max-width: 100%;
+}
+
+#wrap {
+    padding: 0 3rem;
+    align-items: center;
+    justify-content: center;
+    background: url("/src/assets/images/login_bg.jpg") 50% 50% / cover no-repeat;
+}
+
+.container {
+    width: 100%;
+    max-width: 143rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 7.3rem;
+    .login_wrap {
+        width: 52.2rem;
+        flex-shrink: 0;
+        border-radius: 5rem;
+        border: 2px solid rgba(255, 255, 255, 0.70);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(224, 229, 236, 0.50) 100%);
+        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.40) inset;
+        filter: drop-shadow(30px 30px 100px #DDD);
+        backdrop-filter: blur(15px);
+        padding: 6rem 5rem 24rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo {
+            font-size: 2.6rem;
+            font-family: var(--font-p600);
+            font-weight: 400;
+            color: var(--color-black);
+            position: relative;
+            padding-top: 14.8rem;
+            margin-bottom: 4.6rem;
+            &::before {
+                content: "";
+                width: 12.2rem;
+                height: 12.2rem;
+                background: url("/src/assets/icons/circle_logo.png") 50% 50% / contain no-repeat;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        form {
+            width: 100%;
+            position: relative;
+            .fill_btn {
+                position: absolute;
+                bottom: -15.6rem;
+                left: 0;
+                width: 100%;
+                height: 8rem;
+                border-radius: 1.4rem;
+                background-color: var(--color-point);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.6rem;
+                font-family: var(--font-p600);
+                color: var(--color-white);
+            }
+        }
+        .login_box {
+            width: 100%;
+            position: relative;
+            .input_box {
+                width: 100%;
+                position: relative;
+                &::after {
+                    content: "";
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 1.5rem;
+                }
+                input {
+                    width: 100%;
+                    height: 7rem;
+                    position: relative;
+                    border: 1px solid var(--color-border);
+                    border-radius: 1.4rem;
+                    background: rgba(255, 255, 255, 0.50);
+                    padding-inline: 7.5rem;
+                    font-size: 1.6rem;
+                    font-family: var(--font-p400);
+                    color: var(--color-black);
+                    &::placeholder {
+                        color: #6A6D72;
+                    }
+                }
+                & + .input_box {
+                    margin-top: 1rem;
+                }
+                &.id {
+                    &::after {
+                        background: url("/src/assets/icons/login_id.png") 50% 50% / contain no-repeat;
+                    }
+                }
+                &.password {
+                    &::after {
+                        background: url("/src/assets/icons/login_password.png") 50% 50% / contain no-repeat;
+                    }
+                }
+            }
+        }
+        .btn_flex {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            a {
+                font-size: 1.2rem;
+                font-family: var(--font-p600);
+                color: var(--color-gray-2);
+            }
+        }
+    }
+    .info_box {
+        flex: 1;
+        padding-top: 12.8rem;
+        position: relative;
+        .sub_tit {
+            font-size: 2.6rem;
+            color: #3D3F42;
+        }
+        .tit {
+            font-size: 3.4rem;
+            font-family: var(--font-p600);
+            color: var(--color-black);
+            margin-block: 1.4rem 7.6rem;
+        }
+        ul {
+            width: 100%;
+            max-width: 45rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.6rem;
+            margin-bottom: 1rem;
+            li {
+                font-size: 1.3rem;
+                font-family: var(--font-p500);
+                color: #6A6D72;
+                position: relative;
+                &.line {
+                    &::after {
+                        content: "|";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: -1rem;
+                    }
+                }
+            }
+        }
+        .copyright {
+            font-size: 1.3rem;
+            font-family: var(--font-p500);
+            color: #6A6D72;
+        }
+    }
+}

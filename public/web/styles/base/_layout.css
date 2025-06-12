@@ -1,0 +1,40 @@
+html{
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+main{
+    flex:1;
+    padding-top: 7rem;
+}
+
+.full-height {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+
+.container{
+    margin: 0 auto;
+    padding-inline:2rem;
+    &.w-1440{
+        max-width: 144rem;
+    }
+    &.w-1024{
+        max-width: 102.4rem;
+    }
+    &.w-820{
+        max-width: 82rem;
+    }
+    &.w-560{
+        max-width: 56rem;
+    }
+    &.w-375{
+        max-width: 37.5rem;
+    }
+}

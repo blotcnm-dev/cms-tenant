@@ -1,0 +1,56 @@
+@import "../base/common.css";
+
+.common_table {
+    .thead {
+        padding: 0;
+        .num {
+            color: transparent;
+        }
+    }
+    .tbody {
+        li {
+            padding: 0;
+        }
+        .type {
+            text-align: left;
+        }
+        .title {
+            text-align: left;
+        }
+    }
+    .check, .num {
+        width: 5%;
+    }
+    .type {
+        width: 15%;
+    }
+    .title {
+        flex: 1;
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+    }
+    .date, .writer, .show {
+        width: 10%;
+    }
+    .hits {
+        width: 8%;
+    }
+    .check {
+        .chk_input {
+            span {
+                width: 2.4rem;
+                height: 2.4rem;
+                padding: 0;
+                margin: 0 auto;
+                &::before {
+                    top: 0;
+                }
+            }
+        }
+    }
+}

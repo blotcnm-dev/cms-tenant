@@ -1,0 +1,144 @@
+@import "../base/common.css";
+
+.menu_management {
+    .common_table {
+        background-color: var(--color-white);
+        #menu {
+            border: 1px solid var(--color-border);
+            border-radius: 0 0 0.8rem 0.8rem;
+            overflow: hidden;
+        }
+        .menu {
+            width: 100%;
+            position: relative;
+        }
+        .menu_name {
+            width: 30%;
+            position: relative;
+        }
+        .num {
+            width: 6.2%;
+        }
+        .en {
+            width: 15.5%;
+        }
+        .path, .info {
+            width: 20%;
+        }
+        .use {
+            width: 8.3%;
+        }
+        .menu_item {
+            width: 100%;
+            position: relative;
+            background-color: var(--color-white);
+            cursor: grab;
+            .inner {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-block: 1.5rem;
+                > div {
+                    padding-inline: 0.3rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .accordion {
+                width: 61.7%;
+                > div {
+                    flex: 1;
+                    padding-inline: 0.3rem;
+                }
+                .num {
+                    flex: none;
+                    width: 10%;
+                    font-size: 1.5rem;
+                    color: var(--color-gray-1);
+                    text-align: center;
+                }
+                .en {
+                    flex: none;
+                    width: 25.2%;
+                }
+            }
+            &.depth_1 {
+                background-color: #F8F8F8;
+                .menu_name {
+                    padding-left: 4.5rem;
+                }
+            }
+            &.depth_2 {
+                .menu_name {
+                    padding-left: 8rem;
+                }
+                &::before {
+                    left: 4.8rem;
+                }
+            }
+            &.depth_3 {
+                .menu_name {
+                    padding-left: 11.4rem;
+                }
+                &::before {
+                    left: 8rem;
+                }
+                .plus_btn {
+                    display: none;
+                }
+            }
+            &::before {
+                content: "";
+                width: 1.8rem;
+                height: 1.3rem;
+                background: url("/src/assets/icons/draggable.png") 50% 50% / contain no-repeat;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1.5rem;
+            }
+        }
+        .plus_btn {
+            width: fit-content;
+            padding: 0.7rem 1rem;
+            border-radius: 0.3rem;
+            border: 1px solid #EEE;
+            background-color: #F6F6F6;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 3.6rem;
+            span {
+                font-size: 1.2rem;
+                color: var(--color-gray-3);
+                padding-left: 1.2rem;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    background: url("/src/assets/icons/menu_plus.png") 50% 50% / contain no-repeat;
+                }
+            }
+        }
+        .edit_btn {
+            display: none;
+        }
+        .del_btn {
+            font-size: 0;
+            color: transparent;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.6rem;
+            background: url("/src/assets/icons/del_btn_2.png") 50% 50% / contain no-repeat;
+        }
+    }
+}

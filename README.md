@@ -9,16 +9,22 @@
 
         # 의존성 설치
         composer install --no-dev --optimize-autoloader --no-interaction
+
+
+        # 스토리지 링크 생성
+        php artisan storage:link
+
       
         # 캐쉬 클리어
         php artisan optimize:clear 
+
 
         # 캐쉬 생성 
         php artisan optimize
 
 
         # 퍼미션 설정 
-        WORK_DIR="/home/cms/html"            
+        WORK_DIR="/home/cmstest/html"            
         sudo chown -R www-data:cms $WORK_DIR 
         sudo find  $WORK_DIR/storage -type d -exec chmod 775 {} \;
         sudo find  $WORK_DIR/storage -type f -exec chmod 664 {} \;

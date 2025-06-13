@@ -45,6 +45,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'sanctum' => \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'client-session' => \App\Http\Middleware\ClientSession::class,
             'response-structure' => \App\Http\Middleware\ResponseStructure::class,
+            'setup.check' => \App\Http\Middleware\SetupCheckMiddleware::class,
         ]);
 
         $middleware->web([

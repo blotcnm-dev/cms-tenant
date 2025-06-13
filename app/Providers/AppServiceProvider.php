@@ -36,27 +36,23 @@ class AppServiceProvider extends ServiceProvider
             $grade_id = session('blot_ugrd');
             $originalMenus = config('admin_menu.menus');
             // 세션 체크 후 조건부 메뉴 추가
-            if (session()->get('blot_adid') == 'blot') {
-                $originalMenus[] =  [
-                    'code' => '7000',
-                    'name' => '입점사 관리',
-                    'icon' => 'gnb_stats.png',
-                    'icon_dark' => 'gnb_stats_dark.png',
-                    'children' => [
-                        [
-                            'code' => '7100',
-                            'name' => '입점사 관리',
-                            'link' => '/master/provider',
-                            'route_name' => 'provider'
-                        ],
-                    ]
-                ];
-            }
-
-            $originalMenus = array_filter($originalMenus);
-
-
-
+//            if (session()->get('blot_adid') == 'blot') {
+//                $originalMenus[] =  [
+//                    'code' => '7000',
+//                    'name' => '입점사 관리',
+//                    'icon' => 'gnb_stats.png',
+//                    'icon_dark' => 'gnb_stats_dark.png',
+//                    'children' => [
+//                        [
+//                            'code' => '7100',
+//                            'name' => '입점사 관리',
+//                            'link' => '/master/provider',
+//                            'route_name' => 'provider'
+//                        ],
+//                    ]
+//                ];
+//            }
+//            $originalMenus = array_filter($originalMenus);
 
             $permissions = [];
             if ($grade_id) {

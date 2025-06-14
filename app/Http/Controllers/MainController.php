@@ -19,7 +19,7 @@ class MainController extends Controller
         return view('web.index');
     }
 
-    public function explain_setup(Request $request)
+    public function explain_setup_back (Request $request)
     {
         // .env 파일 존재 확인
         if (file_exists(base_path('.env'))) {

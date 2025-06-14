@@ -2,11 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/setup',                     [\App\Http\Controllers\MainController::class, 'explain_setup'])        ->name('explain_setup');
 
-
-// 일반 라우트들 (설정 체크 미들웨어 적용)
-Route::middleware(['setup.check'])->group(function () {
     /*
     * 메인페이지
     */
@@ -91,8 +87,6 @@ Route::middleware(['setup.check'])->group(function () {
     Route::prefix('master')->group(function() : void {
         require __DIR__ . '/webMaster.php';
     });
-
-});
 
 
 

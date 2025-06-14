@@ -4,6 +4,14 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
+
+// .env 파일 체크
+if (!file_exists(__DIR__.'/../.env')) {
+    header('Location: /setup.html');
+    exit;
+}
+
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
         App\Providers\MemberConfigServiceProvider::class,

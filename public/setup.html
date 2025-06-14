@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laravel CMS 초기 설정 가이드</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8fafc;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1f2937;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #374151;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-left: 4px solid #3b82f6;
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .command {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .comment {
+            color: #6b7280;
+            font-style: italic;
+        }
+        .warning {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .info {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .step {
+            background-color: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🚀 Laravel CMS 초기 설정 가이드</h1>
+
+    <h2>📋 1단계: 프로젝트 디렉토리 생성 및 소스 다운로드</h2>
+    <div class="code-block">
+        <span class="comment"># 프로젝트 디렉토리 생성</span><br>
+        <span class="command">mkdir /home/cmstest/html</span><br>
+        <span class="command">cd /home/cmstest/html</span><br>
+        <br>
+        <span class="comment"># 소스 복제</span><br>
+        <span class="command">git clone https://github.com/blotcnm-dev/cms-tenant.git .</span><br>
+    </div>
+
+    <h2>🔐 2단계: 파일 권한 설정</h2>
+    <div class="step">
+        Laravel이 정상적으로 작동하려면 적절한 파일 권한이 필요합니다.
+    </div>
+
+    <div class="code-block">
+        <span class="comment"># 기본 소유권 설정</span><br>
+        <span class="command">sudo chown -R cmstest:cmstest /home/cmstest/html</span><br>
+        <br>
+        <span class="comment"># 웹서버가 쓸 수 있도록 그룹 권한 설정</span><br>
+        <span class="command">sudo chgrp -R www-data /home/cmstest/html/storage</span><br>
+        <span class="command">sudo chgrp -R www-data /home/cmstest/html/bootstrap/cache</span><br>
+        <br>
+        <span class="comment"># storage 디렉토리 권한 설정</span><br>
+        <span class="command">sudo find /home/cmstest/html/storage -type d -exec chmod 775 {} \;</span><br>
+        <span class="command">sudo find /home/cmstest/html/storage -type f -exec chmod 664 {} \;</span><br>
+        <br>
+        <span class="comment"># bootstrap/cache 디렉토리 권한 설정</span><br>
+        <span class="command">sudo find /home/cmstest/html/bootstrap/cache -type d -exec chmod 775 {} \;</span><br>
+        <span class="command">sudo find /home/cmstest/html/bootstrap/cache -type f -exec chmod 664 {} \;</span><br>
+    </div>
+
+    <h2>⚙️ 3단계: 환경 설정 파일 생성</h2>
+    <div class="info">
+        <strong>💡 중요:</strong> .env 파일은 Laravel 애플리케이션의 핵심 설정 파일입니다. 데이터베이스 연결 정보, 이메일 설정 등이 포함됩니다.
+    </div>
+
+    <div class="code-block">
+        <span class="comment"># .env 파일 생성</span><br>
+        <span class="command">cp .env.example .env</span><br>
+    </div>
+
+    <div class="step">
+        <strong>📝 .env 파일 편집 필요사항:</strong>
+        <ul>
+            <li><span class="highlight">DB_HOST</span>, <span class="highlight">DB_DATABASE</span>, <span class="highlight">DB_USERNAME</span>, <span class="highlight">DB_PASSWORD</span> - 데이터베이스 연결 정보</li>
+            <li><span class="highlight">MAIL_HOST</span>, <span class="highlight">MAIL_USERNAME</span>, <span class="highlight">MAIL_PASSWORD</span> - 이메일 설정</li>
+        </ul>
+    </div>
+
+    <h2>📦 4단계: Composer 의존성 설치</h2>
+    <div class="code-block">
+        <span class="comment"># 사용자 계정으로 변경</span><br>
+        <span class="command">su - cmstest</span><br>
+        <br>
+        <span class="comment"># Composer 패키지 설치</span><br>
+        <span class="command">cd /home/cmstest/html</span><br>
+        <span class="command">composer install --no-dev --optimize-autoloader</span><br>
+        <br>
+        <span class="comment"># Laravel 애플리케이션 키 생성</span><br>
+        <span class="command">php artisan key:generate</span><br>
+        <br>
+        <span class="comment"># 캐시 클리어</span><br>
+        <span class="command">php artisan config:clear</span><br>
+        <span class="command">php artisan cache:clear</span><br>
+        <span class="command">php artisan view:clear</span><br>
+        <br>
+        <span class="comment"># 사용자 계정에서 나가기</span><br>
+        <span class="command">exit</span><br>
+    </div>
+
+    <h2>🔄 5단계: 웹서버 재시작</h2>
+    <div class="code-block">
+        <span class="comment"># Nginx 재시작</span>
+        <span class="command">sudo systemctl reload nginx</span>
+    </div>
+
+    <h2>🗄️ 6단계: 데이터베이스 설정 (선택사항)</h2>
+    <div class="step">
+        .env 파일에서 데이터베이스 정보를 설정한 후 실행하세요.
+    </div>
+
+    <div class="code-block">
+        <span class="comment"># 데이터베이스 마이그레이션</span>
+        <span class="command">su - cmstest</span>
+        <span class="command">cd /home/cmstest/html</span>
+        <span class="command">php artisan migrate</span>
+
+        <span class="comment"># 심볼릭 링크 생성 (파일 업로드용)</span>
+        <span class="command">php artisan storage:link</span>
+        <span class="command">exit</span>
+    </div>
+
+</div>
+</body>
+</html>

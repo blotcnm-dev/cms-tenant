@@ -13,7 +13,6 @@ Route::get('/permissionError',      [\App\Http\Controllers\Admins\AdminUserError
 Route::get('/processemailqueue',   [\App\Services\EmailService::class, 'processQueuedEmails']);
 
 
-
 /*
  * 슈퍼 관리자 패키지
  * 입점사 관리 및 다이렉트 로그인
